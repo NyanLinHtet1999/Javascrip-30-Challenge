@@ -1,0 +1,56 @@
+* {
+   padding : 0;
+   margin : 0;
+   /* box-sizing: border-box;   */
+}
+body {
+     height : 100vh;
+     width: 100%;
+     background: rgb(23,135,158);
+     background: linear-gradient(90deg, rgba(23,135,158,1) 0%, rgba(65,56,221,1) 57%);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.innerFace {
+     width : 400px;
+     height : 400px;
+     border: 3px solid white;
+     position: relative;
+}
+.outerFace {
+     border: 10px solid rgb(194, 160, 10);
+     width : 405px;
+     height: 405px;
+     box-shadow: rgba(0,0,0,.98) 0px 0px 3px, inset rgba(0,0,0,.98) 0px -2px 3px;
+     transform: rotate(90deg);
+}
+.clock {
+     border-radius: 100%;
+}
+.hand {
+     height: 5px;
+     background-color: black;
+     position: absolute;
+     transform-origin: 100%;
+     border-start-start-radius: 100%;
+     
+}
+.secondHand {
+     width: 45%;
+     top : 50%;
+     left : 5%;
+     /* transform : rotate(90deg); */
+}
+.minHand {
+     width: 40%;
+     top : 50%;
+     left : 10%;
+     /* transform : rotate(0deg); */
+}
+.hourHand {
+     width : 25%;
+     top : 50%;
+     left : 25%;
+     /* transform : rotate(180deg); */
+}
