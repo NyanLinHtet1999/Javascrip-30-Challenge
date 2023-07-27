@@ -5,7 +5,7 @@
 }
 :root {
      --spacing : 10px;
-     --color : yellow;
+     --color : #ffff00;
      --blur : 2px;
 }
 body {
@@ -26,4 +26,7 @@ body {
 }
 .blur {
      filter: blur(var(--blur));
+}
+.hl {
+     color : var(--color);
 }
