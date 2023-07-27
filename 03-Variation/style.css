@@ -1,0 +1,29 @@
+* {
+     margin: 0px;
+     padding : 0px;
+     /* box-sizing: border-box; */
+}
+:root {
+     --spacing : 10px;
+     --color : yellow;
+     --blur : 2px;
+}
+body {
+     color : white;
+     background-color: rgba(2, 57, 82, 0.979);
+     text-align: center;
+}
+.heading {
+     font-size: 50px;
+     
+}
+.controls {
+     margin-top: 50px;
+     font-size: 30px;
+}
+.border {
+     border: var(--spacing) solid var(--color);
+}
+.blur {
+     filter: blur(var(--blur));
+}
