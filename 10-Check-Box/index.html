@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Checkboxes</title>
+    <link rel="icon" href="https://fav.farm/☑️" />
+     <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+     <div class="container">
+          <div class="item">
+               <input type="checkbox" name="" id="">
+               <label for="">This is an inbox layout</label>
+          </div>
+          <div class="item">
+               <input type="checkbox" name="" id="">
+               <label for="">Check one item</label>
+          </div>
+          <div class="item">
+               <input type="checkbox" name="" id="">
+               <label for="">Hold shift down</label>
+          </div>
+          <div class="item">
+               <input type="checkbox" name="" id="">
+               <label for="">Everything in between will be checked</label>
+          </div>
+          <div class="item">
+               <input type="checkbox" name="" id="">
+               <label for="">Without any libraries</label>
+          </div>
+          <div class="item">
+               <input type="checkbox" name="" id="">
+               <label for="">Just regular JavaScript</label>
+          </div>
+          <div class="item">
+               <input type="checkbox" name="" id="">
+               <label for="">Have a nice day!</label>
+          </div>
+          <div class="item">
+               <input type="checkbox" name="" id="">
+               <label for="">Good Luck!</label>
+          </div>
+
+          
+     </div>
+     
+</body>
+<script>
+     let checkboxes = document.querySelectorAll('input[type = "checkbox"]');
+     // console.log(checkboxes);
+     let lastOne;
+     function handleCheck(e){
+          if(this.checked){
+               this.nextElementSibling.classList.add("middleLine");
+         } else {
+               this.nextElementSibling.classList.remove("middleLine");
+         }
+
+         if(this.checked && e.shiftKey && lastOne && lastOne.checked){
+               let inBetween = false;
+               for (let i = 0; i < checkboxes.length; i++) {
+                    if(inBetween){
+                         checkboxes[i].checked = true;
+                         checkboxes[i].nextElementSibling.classList.add("middleLine");
+                    }
+               if(checkboxes[i] === this || checkboxes[i] === lastOne){
+                         inBetween = !inBetween;
+               }  
+               }
+         }
+         lastOne = this;
+     }
+
+     checkboxes.forEach(checkbox => {
+          checkbox.addEventListener('click', handleCheck)
+     })
+</script>
+</html>

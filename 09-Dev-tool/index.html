@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://fav.farm/✅" />
+     <title>Console Tricks!</title>
+</head>
+<body>
+     <p onclick="makeGreen()">×BREAK×DOWN×</p>
+</body>
+<script>
+     const dogs = [
+        { name: "Snickers", age: 2 },
+        { name: "Hugo", age: 8 },
+      ];
+
+     function makeGreen() {
+          const p = document.querySelector("p");
+          p.style.color = "#DC3714";
+          p.style.fontSize = "50px";
+     }
+
+     //Regular 
+     console.log("Hello");
+
+     //Interpolated
+     console.log("Hello" , "✅");
+
+     //style
+     console.log("%c Javascript World!!",'font-size : 30px ; color : red');
+
+     //Waring
+     console.warn("OH no");
+
+     //Error
+     console.error("Shit");
+
+     //Info
+     console.info("JS is Fun");
+
+     //Testing
+     const p = document.querySelector("p");
+     console.assert(
+          p.classList.contains("hey"), "It is wrong"
+     )
+
+     //Clearing
+     // console.clear();
+
+     //Viewing Dom elements
+     console.log(p);
+     console.dir(p);     
+
+     //Grouping together
+     dogs.forEach(dog => {
+          console.groupCollapsed(`${dog.name}`)
+          console.log(`Hello from ${dog.name}`);
+          console.log(`${dog.name} is ${dog.age} years old`);
+          console.groupEnd(`${dog.name}`);
+     })
+
+     //counting
+     console.count("test");
+     console.count("test");
+     console.count("test");
+     console.count("test");
+
+     //timing
+     console.time("Fetching data");
+     fetch(
+          "https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json" 
+     ).then((data) => data.json())
+     .then((data) => {
+          console.timeEnd("Fetching data");
+          console.log(data);
+     })
+
+     console.table(dogs);
+</script>
+</html>
